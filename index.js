@@ -49,3 +49,13 @@ for (let i= 0; i < cantidad; i++) {
 }
 
 
+//Ejemplo 4
+
+let malbec = prompt("ingresa el numero correcto del producto");
+let intentosVinos = 0;
+ 
+while(malbec !="1234" && intentosVinos != 3){
+    intentosVinos++;
+    malbec = prompt("ingresa el numero correcto del producto");
+}
+alert("Ya no puedes comprar. Superaste el numero de intentos");
