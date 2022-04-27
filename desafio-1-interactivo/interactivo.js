@@ -32,7 +32,7 @@ function bienvenida(){
 	let nombre = prompt("Ingresa tu nombre, por favor");
 	let apellido = prompt("Ingresa tu apellido, por favor");
 
-    alert(`Hola ${nombre}, ${apellido} bienvenid@ a VinotecaBBB`)
+    alert(`Hola ${nombre}, ${apellido} bienvenid@ a VinotecaBBB`);
 }
 
 
@@ -62,7 +62,7 @@ function select(){
         let productSelect = (`${vinoTinto} + ${vinoTintoPrecio}`;
         alert(`Buena desicion! Seleccionaste ${productSelect}`);
 
-    } else if { seleccion == "2" || seleccion == "dos") {
+    } else if (seleccion == "2" || seleccion == "dos") {
         let productSelect = (`${vinoBlanco} + ${vinoBlancoPrecio}`);
         alert(`Excelente! Seleccionaste ${productSelect}`);
 
@@ -71,16 +71,18 @@ function select(){
     }
 }
 
-select()
+select();
 
 //Funcion de Totales
-function sumaTotal(){
+function sumaTotal(suma){
 
-    return select*iva;
+let suma = productSelect*IVA;
+alert(`El total a pagar es ${suma}`);
+    return;
 }
 
 //Ejecucion la suma total 
-sumaTotal ()
+sumaTotal (suma);
 
 
 
