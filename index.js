@@ -63,7 +63,7 @@ function select(){
         alert(`Buena desicion! Seleccionaste ${productSelect}`);
 
     } else if (seleccion == "2" || seleccion == "dos") {
-        let productSelect = (`${vinoBlanco} + ${vinoBlancoPrecio}`);
+        productSelect = (`${vinoBlanco} + ${vinoBlancoPrecio}`);
         alert(`Excelente! Seleccionaste ${productSelect}`);
 
     }else{
@@ -74,12 +74,93 @@ function select(){
 select();
 
 //Funcion de Totales
-function sumaTotal(suma){
+function sumaTotal(){
 
-let suma = productSelect*IVA;
-alert(`El total a pagar es ${suma}`);
+    let suma = productSelect*IVA;
+    alert("El total a pagar es" + suma);
     return;
 }
 
 //Ejecucion la suma total 
-sumaTotal (suma);
+sumaTotal ();
+
+
+
+
+
+
+
+
+
+/* Para el proximo desafio
+
+//Clase de Funciones
+
+
+class Producto {
+    constructor(nombre, precio, cantidad)
+        this.producto = producto;
+        this.precio = precio;
+        this.cantidad = cantidad;
+}
+
+vender() 
+
+}
+
+const producto1 = new Producto("Vino Tinto", 1500, 1);
+const producto2 = new Producto("Vino Blanco", 1200, 1);
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+function productos(){
+	let vinoTinto = prompt("Ingresa tu nombre, por favor");
+	let vinoBlanco = prompt("Ingresa tu apellido, por favor");
+
+    alert(`Hola ${nombre}, ${apellido} bienvenid@ a VinotecaBBB`)
+
+
+}
+
+let vinoTinto = prompt("ingresa el numero correcto del producto a seleccionar: 1. Vino Tinto n/ ");
+let vinoBlanco = 0;
+ 
+while(malbec =="1" || malbec == "uno"){
+    intentosVinos++;
+    malbec = prompt("ingresa el numero correcto del producto");
+}
+alert("Ya no puedes comprar. Superaste el numero de intentos");
+
+
+function Total () {
+
+}
+    let resultado = suma()
+*/

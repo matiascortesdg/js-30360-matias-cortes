@@ -63,7 +63,7 @@ function select(){
         alert(`Buena desicion! Seleccionaste ${productSelect}`);
 
     } else if (seleccion == "2" || seleccion == "dos") {
-        let productSelect = (`${vinoBlanco} + ${vinoBlancoPrecio}`);
+        productSelect = (`${vinoBlanco} + ${vinoBlancoPrecio}`);
         alert(`Excelente! Seleccionaste ${productSelect}`);
 
     }else{
@@ -74,15 +74,15 @@ function select(){
 select();
 
 //Funcion de Totales
-function sumaTotal(suma){
+function sumaTotal(){
 
-let suma = productSelect*IVA;
-alert(`El total a pagar es ${suma}`);
+    let suma = productSelect*IVA;
+    alert("El total a pagar es" + suma);
     return;
 }
 
 //Ejecucion la suma total 
-sumaTotal (suma);
+sumaTotal ();
 
 
 
