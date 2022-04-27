@@ -1,61 +1,77 @@
-//Primeras ejercicios de JS
-//Ciclos - Complementario
-
-//Ejemplo 1 / Ingreso con nombre y Edad
+//DESAFIO 1 | interactivo
 
 
+alert("La idea es que el usuario con edad mayor o igual a 18 años pueda ingresar con su nombe y elegir distinta variedad de vinos de la tienda de la vinoteca");
 
-let nombre = prompt("Por favor introduce tu nombre");
-let edad = parseFloat(prompt("Ingrese su edad"));
+//POsibles Variables a futuro
+/*
+vinos
+vinoTinto
+vinoBlanco
+espumante
+espirituosas*/
 
-if(edad >= 18) {
-    alert("Hola " + nombre + " bienvenid@ a nuestra tienda");
-    
-}else{
-    alert("Ups! Parece que no tienes edad suficiente para ingresar");
+
+//Para ingresar vamos a pedir ser mayor ó igual a 18 años
+
+function solicitarEdad(){
+	let edad = prompt("Ingresa tu edad, por favor");
+
+	if (edad >= 18) {
+		bienvenida()
+
+	} else {
+		alert("Aún no tienes la edad legal para comprar alcohol. Vuelve en unos años")
+	} 
 }
 
 
-//Ejemplo 2 / Una vez ingresado qué preferencias tiene
+//Bienvenid@ a nuestra tienda de vinos y bebidas espirituosas una vez comprobada la edad
 
-let cepaVino = prompt("Qué cepa de vino que más le gusta");
+function bienvenida(){
+	let nombre = prompt("Ingresa tu nombre, por favor");
+	let apellido = prompt("Ingresa tu apellido, por favor");
 
-while (cepaVino != "esc"){
-    let copasVino = parseInt(prompt("Ingrese la cantidad de copas de vino suele tomar"));
-    
-    if(copasVino <= 2) {
-        alert("Usted sabe beber con responsabilidad");
-    }
-
-    if(copasVino = 3) {
-        alert("Está bien si es de vez en cuando");
-    }
-
-    else(copasVino > 3);{
-        alert("Le recomendamos pedir ayuda. Nosotros le dejamos unos numeros de contacto Teléfono - (011) 5263-8621 - Mail - osg@aa.org.ar");
-        break;
-    }
-
-}
-
-alert("Gracias por visitarnos");
-
-//Ejemplo 3 / 
-
-let cantidad = parseInt(prompt("Ingrese la cantidad de veces que se repetirá las copas de vino"))
-
-for (let i= 0; i < cantidad; i++) {
-	alert("este mensaje de copas se repetirá" + " " + cantidad + " " + "veces");
+    alert(`Hola ${nombre}, ${apellido} bienvenid@ a VinotecaBBB`)
 }
 
 
-//Ejemplo 4
+//Ejecucion Interactivo
 
-let malbec = prompt("ingresa el numero correcto del producto");
-let intentosVinos = 0;
- 
-while(malbec !="1234" && intentosVinos != 3){
-    intentosVinos++;
-    malbec = prompt("ingresa el numero correcto del producto");
+solicitarEdad();
+
+//Menu de navegacion de productos
+
+//variables de productos
+let vinoTinto = false;
+let vinoBlanco= false;
+
+//variables de precio de los productos
+const vinoTintoPrecio = 1500;
+const vinoBlancoPrecio = 1200;
+const IVA = 0.21;
+
+
+function select(){
+
+    let seleccion = prompt(`indique con el numero de referencia el producto que desea:
+    \n 1. Vino Tinto
+    \n 2. Vino Blanco`);
+
+    if(seleccion == "1" || seleccion == "uno") {
+        let productSelect = vinoTinto + vinoTintoPrecio;
+        alert("Buena desicion! Seleccionaste ${vinoTinto}");
+
+    } else { seleccion == "2" || seleccion == "dos") {
+        let productSelect = vinoBlanco + vinoBlancoPrecio;
+        alert("Excelente! Seleccionaste ${vinoBlanco}");
 }
-alert("Ya no puedes comprar. Superaste el numero de intentos");
+
+
+//Funcion de Totales
+function sumaTotal (select*iva){
+    return select*iva;
+}
+
+//Ejecucion la suma total 
+sumaTotal ()

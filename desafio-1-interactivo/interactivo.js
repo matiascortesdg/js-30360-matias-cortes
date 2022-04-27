@@ -3,7 +3,7 @@
 
 alert("La idea es que el usuario con edad mayor o igual a 18 años pueda ingresar con su nombe y elegir distinta variedad de vinos de la tienda de la vinoteca");
 
-//Variables
+//POsibles Variables a futuro
 /*
 vinos
 vinoTinto
@@ -42,6 +42,45 @@ solicitarEdad();
 
 //Menu de navegacion de productos
 
+//variables de productos
+let vinoTinto = "Vino Tinto";
+let vinoBlanco= "Vino Blanco";
+
+//variables de precio de los productos
+const vinoTintoPrecio = 1500;
+const vinoBlancoPrecio = 1200;
+const IVA = 0.21;
+
+
+function select(){
+
+    let seleccion = prompt(`indique con el numero de referencia el producto que desea:
+    \n 1. Vino Tinto
+    \n 2. Vino Blanco`);
+
+    if(seleccion == "1" || seleccion == "uno") {
+        let productSelect = (`${vinoTinto} + ${vinoTintoPrecio}`;
+        alert(`Buena desicion! Seleccionaste ${productSelect}`);
+
+    } else if { seleccion == "2" || seleccion == "dos") {
+        let productSelect = (`${vinoBlanco} + ${vinoBlancoPrecio}`);
+        alert(`Excelente! Seleccionaste ${productSelect}`);
+
+    }else{
+        alert("Tienes que elegir entre las opciones brindadas");
+    }
+}
+
+select()
+
+//Funcion de Totales
+function sumaTotal(){
+
+    return select*iva;
+}
+
+//Ejecucion la suma total 
+sumaTotal ()
 
 
 
@@ -51,7 +90,7 @@ solicitarEdad();
 
 
 
-
+/* Para el proximo desafio
 
 //Clase de Funciones
 
@@ -63,21 +102,18 @@ class Producto {
         this.cantidad = cantidad;
 }
 
-vender() {
-    alert("")
+vender() 
+
 }
 
 const producto1 = new Producto("Vino Tinto", 1500, 1);
 const producto2 = new Producto("Vino Blanco", 1200, 1);
 
+*/
 
 
 
 
-//Funcion de Totales
-function sumaTotal (valorProducto, cantidadProducto){
-    return valorProducto*cantidadProducto;
-}
 
 
 
