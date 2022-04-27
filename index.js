@@ -43,8 +43,8 @@ solicitarEdad();
 //Menu de navegacion de productos
 
 //variables de productos
-let vinoTinto = false;
-let vinoBlanco= false;
+let vinoTinto = "Vino Tinto";
+let vinoBlanco= "Vino Blanco";
 
 //variables de precio de los productos
 const vinoTintoPrecio = 1500;
@@ -59,17 +59,23 @@ function select(){
     \n 2. Vino Blanco`);
 
     if(seleccion == "1" || seleccion == "uno") {
-        let productSelect = vinoTinto + vinoTintoPrecio;
-        alert("Buena desicion! Seleccionaste ${vinoTinto}");
+        let productSelect = (`${vinoTinto} + ${vinoTintoPrecio}`;
+        alert(`Buena desicion! Seleccionaste ${productSelect}`);
 
-    } else { seleccion == "2" || seleccion == "dos") {
-        let productSelect = vinoBlanco + vinoBlancoPrecio;
-        alert("Excelente! Seleccionaste ${vinoBlanco}");
+    } else if { seleccion == "2" || seleccion == "dos") {
+        let productSelect = (`${vinoBlanco} + ${vinoBlancoPrecio}`);
+        alert(`Excelente! Seleccionaste ${productSelect}`);
+
+    }else{
+        alert("Tienes que elegir entre las opciones brindadas");
+    }
 }
 
+select()
 
 //Funcion de Totales
-function sumaTotal (select*iva){
+function sumaTotal(){
+
     return select*iva;
 }
 
