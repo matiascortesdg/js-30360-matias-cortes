@@ -2,6 +2,24 @@
 
 //Ejemplo Vinos Tintos y Blancos
 
+const MenuPrincipal = 
+    `Vinos Tintos:\n` +
+    `\n` +
+    `Malbec\n` +
+    `Cabernet\n` +
+    `Syrah\n` +
+    `Tempranillo\n` +
+    `\n` +
+    `Vinos Blancos:\n` +
+    `\n` +
+    `Torrontes\n` +
+    `Chardonnay\n` +
+    `Sauvignon\n` +
+    `Blend\n`
+
+alert(MenuPrincipal);
+
+
 //Vinos Tintos
 const productosVinoTinto = [
     {nombre: "Malbec", precio: 450},
