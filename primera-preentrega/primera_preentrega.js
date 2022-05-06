@@ -87,101 +87,6 @@ function menu(){
     }
 }
 
-
-//Function de Busqueda
-
-function busqueda(){
-    const busquedaRapida = prompt(`Contanos, qué estás buscando?\n` +
-        `\n` +
-        `0. Volver a Inicio`
-    );
-    if(busquedaRapida == "0"){
-        menu();//Volver al Menu principal
-
-    }else if(busquedaRapida.length > 0){
-        const busquedaEncontrada = articulos.find((busqueda1) => busqueda1.nombre.includes(busquedaRapida))
-        const verBusqueda = `${busquedaEncontrada.tipo} ${busquedaEncontrada.variedad} ${busquedaEncontrada.nombre} ${busquedaEncontrada.precio}`;
-
-        alert(`Resultados encontrados: ` + `${verBusqueda}`);
-        
-    }else{
-        busqueda();
-    }
-}
-
-
-//Function de busqueda usando filtros
-
-function filtros(){
-    const busquedaFiltros = prompt(`Puedes filtrar articulos por:\n` +
-        `\n` +
-        `1 | Vinos por precio maximo\n` +
-        `----\n` +
-        `2. | Vinos por variedad\n` +
-        `----\n` +
-        `\n` +
-        `0. Volver al Menu`
-    );
-
-    switch(busquedaFiltros){
-        case "1":
-            const precioMax = parseFloat(prompt(`Ahora ingrese el precio maximo de busqueda de los articulos: `));
-            
-            const precioEncontrado = articulos.filter(art => art.precio <= precioMax);
-
-            let verFiltroEncontrado = precioEncontrado.reduce((add, ArtA) => add + "\n" + ArtA.nombre + "   $" + ArtA.precio, "");
-            
-            const precioEncontrado2 = prompt(`Estos son los resultados: ${precioMax}:\n` + `${verFiltroEncontrado}\n` +
-            `----\n` +
-                `1. Volver a Filtros\n` +
-                `----\n` +
-                `0. Volver al Menu`
-            );
-
-            switch(precioEncontrado2){
-                case "1":
-                    filtros();
-                case "0":
-                    menu();
-            }
-
-        case "2":
-            const variedadEncontrada = prompt(`Podemos ayudarte con algunas sugerencias de variedades? Ingresa alguna de estas:\n` +
-                `----\n` +
-                `Malbec\n` +
-                `Cabernet\n` +
-                `Merlot\n` +
-                `Torrontes\n`+
-                `Chardonnay\n`
-                `Blend\n`+
-                `Semillon\n`
-            );
-
-            const variedadEncontrada2 = articulos.filter((ArtA) => ArtA.variedad.includes(variedadEncontrada));
-            
-            let verFiltroVariedad = variedadEncontrada2.reduce((add2, ArtB) => add2 + "\n" + ArtB.nombre + "$" + ArtB.precio, "");
-
-            const variedadFiltro = prompt(`Su busqueda: ${variedadEncontrada}\n` + `${verFiltroVariedad}\n` +
-                `1. Volver a Filtros\n` +
-                `----\n` +
-                `0. Volver al Menu`
-            );
-            switch(variedadFiltro){
-                case "1":
-                    filtros();
-                case "0":
-                    menu();
-            }
-
-        default:
-            filtros();
-
-        case "0":
-            menu();
-    }
-}
-
-
 //Section de Productos
 
 function productos(){
@@ -314,29 +219,32 @@ function productos2(){
 
 function sumaTotal(){
     let valorTotal  = miCarritoTotal.reduce((a, b) => a + b, 0);
+    
     const verDetalleCarrito = prompt(
         `Mi Carrito de Compras:\n` +
         `\n` +
         `${miCarrito.join("")}\n` +
         `\n` +
-        `Total de la compra: $${valorTotal }\n` +
+        `Valor Total a pagar: $${valorTotal }\n` +
         `\n` +
-        `1 | Pagar\n` +
-        `2 | ↩`
+        `1. Pagar\n` +
+        `----\n` +
+        `0. Volver al Menu ↩`
     );
+    
     switch(verDetalleCarrito){
         case "1":
-            alert(
-                `Se ha completado la compra!\n` +
-                `\n` +
-                `Recibira su factura y/o comprobante de compra al siguiente mail:\n` +
-                `example******@mail.com\n`
+            alert(`Todo ha salido bien! Tu compra se ha realizado con éxito!\n`
             );
-            miCArrito.splice(0, miCarrito.length);
+
+            miCarrito.splice(0, miCarrito.length);
             miCarritoTotal.splice(0, miCarritoTotal.length);
+
             menu();
-        case "2":
+       
+        case "0":
             menu();
+       
         default:
             sumaTotal();
     }
@@ -344,6 +252,101 @@ function sumaTotal(){
 
 
 
+//Function de Busqueda
+
+function busqueda(){
+    const busquedaRapida = prompt(`Contanos, qué estás buscando?\n` +
+        `\n` +
+        `0. Volver a Inicio`
+    );
+    if(busquedaRapida == "0"){
+        menu();//Volver al Menu principal
+
+    }else if(busquedaRapida.length > 0){
+        const busquedaEncontrada = articulos.find((busqueda1) => busqueda1.variedad.includes(busquedaRapida));
+
+        const verBusqueda = `${busquedaEncontrada.variedad} ${busquedaEncontrada.nombre} $${busquedaEncontrada.precio}`;
+
+        alert(`Resultados encontrados: ` + `${verBusqueda}`);
+        
+        busqueda();
+    }else{
+        busqueda();
+    }
+}
+
+
+//Function de busqueda usando filtros
+
+function filtros(){
+    const busquedaFiltros = prompt(`Puedes filtrar articulos por:\n` +
+        `\n` +
+        `1 | Vinos por precio maximo\n` +
+        `----\n` +
+        `2. | Vinos por variedad\n` +
+        `----\n` +
+        `\n` +
+        `0. Volver al Menu`
+    );
+
+    switch(busquedaFiltros){
+        case "1":
+            const precioMax = parseFloat(prompt(`Ahora ingrese el precio maximo de busqueda de los articulos: `));
+            
+            const precioEncontrado = articulos.filter(art => art.precio <= precioMax);
+
+            let verFiltroEncontrado = precioEncontrado.reduce((add, artA) => add + "\n" + artA.nombre + "   $" + artA.precio, "");
+            
+            const precioEncontrado2 = prompt(`Estos son los resultados:
+            ${precioMax}:\n` + `${verFiltroEncontrado}\n` +
+            `----\n` +
+                `1. Volver a Filtros\n` +
+                `----\n` +
+                `0. Volver al Menu`
+            );
+
+            switch(precioEncontrado2){
+                case "1":
+                    filtros();
+                case "0":
+                    menu();
+            }
+
+        case "2":
+            const variedadEncontrada = prompt(`Podemos ayudarte con algunas sugerencias de variedades? Ingresa alguna de estas:\n` +
+                `----\n` +
+                `Malbec\n` +
+                `Cabernet\n` +
+                `Merlot\n` +
+                `Torrontes\n`+
+                `Chardonnay\n`
+                `Blend\n`+
+                `Semillon\n`
+            );
+
+            const variedadEncontrada2 = articulos.filter((artA) => artA.variedad.includes(variedadEncontrada));
+            
+            let verFiltroVariedad = variedadEncontrada2.reduce((add2, artB) => add2 + "\n" + artB.nombre + "$" + artB.precio, "");
+
+            const variedadFiltro = prompt(`Su busqueda: ${variedadEncontrada}\n` + `${verFiltroVariedad}\n` +
+                `1. Volver a Filtros\n` +
+                `----\n` +
+                `0. Volver al Menu`
+            );
+            switch(variedadFiltro){
+                case "1":
+                    filtros();
+                case "0":
+                    menu();
+            }
+
+        default:
+            filtros();
+
+        case "0":
+            menu();
+    }
+}
 
 
 
