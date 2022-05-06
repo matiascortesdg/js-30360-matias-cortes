@@ -45,4 +45,4 @@ let vinoBlancoSeleccionado = productosVinoBlanco.find(x => x.nombre === vinoBlan
 let precioTotal = `el precio de los productos elegidos es $ ${vinoTintoSeleccionado.precio + vinoBlancoSeleccionado.precio}`;
 
 
-alert(precioTotal);
+alert(precioTotal);gi
