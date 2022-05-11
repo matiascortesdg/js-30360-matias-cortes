@@ -91,7 +91,7 @@ return(`
             <td>${item.nombre}</td>
             <td>${item.cantidad}</td>
             <td>$${item.precio * item.cantidad} ($${item.precio})</td>
-            <td><img style="width: 20px" src="${item.imagen}" alt="Imagen"</td>
+            <td><img style="width: 20px" src="${item.imagen}" alt="Imagen"></td>
             </tr>
     `)
 };
@@ -116,7 +116,7 @@ const agregarCarrito = (id) => {
 
     //cuando se agregar productos repetidos al carrito
     const repetido = carrito.findIndex(el => el.id === id);
-    
+
         if(repetido === -1) {
 
             carrito.push({
