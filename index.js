@@ -22,7 +22,7 @@ const Espumantes = [
     precio: 845,
     imagen: "https://cepadevinos.com/wp-content/uploads/2017/07/Familia_Gasc%C3%B3n_Extra_Brut_vl8dx1.jpg",
     stock:5,
-    cantidad:1,
+
     },
 
 
@@ -34,7 +34,7 @@ const Espumantes = [
     precio: 1279,
     imagen: "https://cepadevinos.com/wp-content/uploads/2016/09/7793440700939.png",
     stock:3,
-    cantidad:1,
+
     },
 
     {id: 11,
@@ -45,7 +45,7 @@ const Espumantes = [
     precio: 1509,
     imagen: "https://cepadevinos.com/wp-content/uploads/2017/07/Las_Perdices_Champenoise_Extra_Brut_Ros%C3%A9_d9wqxe.jpg",
     stock:8,
-    cantidad:1,
+
     },
 
     {id: 12,
@@ -56,7 +56,7 @@ const Espumantes = [
     precio: 2218,
     imagen: "https://cepadevinos.com/wp-content/uploads/2017/07/Luigi_Bosca_Brut_Nature_z8wcvc.jpg",
     stock:0,
-    cantidad:1,
+
     }
 
 ];
@@ -86,7 +86,7 @@ return(`
             <td>${item.nombre}</td>
             <td>${item.cantidad}</td>
             <td>$${item.precio * item.cantidad} ($${item.precio})</td>
-            <td><img style="width: 20px" src="${item.imagen}" alt="Imagen"</td>
+            <td><img style="width:20px" src="${item.imagen}" alt="imagen"></td>
             </tr>
     `)
 };
@@ -123,7 +123,7 @@ const agregarCarrito = (id) => {
         
             })
         }else {
-            carrito[repetido].cantidad = carrito[repetido].cantidad + 1; 
+            carrito[repetido].cantidad = carrito[repetido].cantidad + 1 
         }
 
     
@@ -135,7 +135,7 @@ const agregarCarrito = (id) => {
     //si tenemos carrito
     cargarProductos(carrito, tablaCarrito, true)
     
-};
+}
 
 cargarProductos(Espumantes, contenedor, false);
 
