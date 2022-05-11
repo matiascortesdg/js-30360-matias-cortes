@@ -6,8 +6,11 @@
 
 const contenedor = document.getElementById("productos");
 
+//Tabla carrito
+const tablaCarrito = document.getElementById("tablaCarrito");
+
 //Local Storage ó array vacio
-const carrito = local.Storage.getItem("carrito"); || [];
+const carrito = localStorage.getItem("carrito") || [];
 
 const Espumantes = [
 
@@ -71,22 +74,36 @@ const getCard = (item) => {
                 <p class="card-text">${item.precio}</p>
                 <p class="card-text">Stock: ${item.stock}</p>
                 
-                
-                <a href="#" onclick="agregarCarrito(${item.id})" class="btn btn-primary">Agregar al Carrito</a>
+                <button onclick=agregarCarrito(${item.id}) class="btn ${item.stock ? 'btn-primary' : 'btn-secondary'}" ${!item.stock ? 'disabled' : '' } >Agregar al carrito</button>
             </div>
         </div>
-    `)
+    `);
 
-}
+};
+
+
+//Funcion tabla carrito
+const getRow = (item) => {
+
+return(`
+        <tr>
+            <th scope="row">${item.id}</th>
+            <td>${item.nombre}</td>
+            <td>${item.cantidad}</td>
+            <td>$${item.precio * item.cantidad} ($${item.precio})</td>
+            <td><img style="width: 20px" src="${item.imagen}" alt="Imagen"</td>
+            </tr>
+    `)
+};
 
 
 //Quiero agregar por cada uno usando funcion flecha
-const cargarProductos = (datos, nodo) => {
+const cargarProductos = (datos, nodo, carritoTabla) => {
     //a este acumulador le voy a llamar a cards
     let acumulador = "";
 // para recorrer el array 
     datos.forEach((el) => {
-        acumulador += getCard(el);
+        acumulador += carritoTabla ? getRow(el) : getCard(el);
 
     })
 
@@ -96,27 +113,34 @@ const cargarProductos = (datos, nodo) => {
 //funcion de agregar al carrito
 const agregarCarrito = (id) => {
     const seleccion = Espumantes.find(item => item.id === id);
+
+    //cuando se agregar productos repetidos al carrito
+    const repetido = carrito.findIndex(el => el.id === id);
+    
+        if(repetido === -1) {
+
+            carrito.push({
+                id: seleccion.id,
+                nombre: seleccion.nombre,
+                precio: seleccion.precio,
+                cantidad: 1,
+                imagen: seleccion.imagen,
+        
+            })
+        }else {
+            carrito[repetido].cantidad = carrito[repetido].cantidad + 1; 
+        }
+
     
     //alert("Agregaste al Carrito el producto: " + seleccion.nombre);
     
     // ami carrito vamos a pushear elementos objetos
-    carrito.push({
-        id: seleccion.id,
-        nombre: seleccion.nombre,
-        bodega: seleccion.bodega,
-        precio: seleccion.precio,
-        cantidad: seleccion.cantidad,
-        stock: 1,
-        imagen: seleccion.imagen,
 
-    });
     
     //si tenemos carrito
+    cargarProductos(carrito, tablaCarrito, true)
     
-
-
 };
 
-cargarProductos(Espumantes, contenedor);
+cargarProductos(Espumantes, contenedor, false);
 
-//
