@@ -65,14 +65,19 @@ const Espumantes = [
 //Item Cards por cada uno de los objetos
 const getCard = (item) => {
     return (`
-        <tr>
-            <th scope="row">${item.id}</th>
-            <td>${item.nombre}</td>
-            <td>${item.cantidad}</td>
-            <td>$${item.precio * item.cantidad} ($${item.precio})</td>
-            <td><img style="width: 20px" src="${item.imagen}" alt="Imagen"></td>
-            </tr>
-    `)
+        <div class="card" style="width: 18rem;">
+            <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}">
+            <div class="card-body">
+                <h5 class="card-title">${item.nombre}</h5>
+                <p class="card-text">${item.variedad}</p>
+                <p class="card-text">${item.bodega}</p>
+                <p class="card-text">${item.precio}</p>
+                <p class="card-text">Stock: ${item.stock}</p>
+                
+                <button onclick=agregarCarrito(${item.id}) class="btn ${item.stock ? 'btn-primary' : 'btn-secondary'}" ${!item.stock ? 'disabled' : '' } >Agregar al carrito</button>
+            </div>
+        </div>
+    `);
 
 };
 
@@ -103,7 +108,7 @@ const cargarProductos = (datos, nodo, carritoTabla) => {
     })
 
     nodo.innerHTML = acumulador;
-};
+}
 
 //funcion de agregar al carrito
 const agregarCarrito = (id) => {
@@ -111,7 +116,7 @@ const agregarCarrito = (id) => {
 
     //cuando se agregar productos repetidos al carrito
     const repetido = carrito.findIndex(el => el.id === id);
-    
+
         if(repetido === -1) {
 
             carrito.push({
@@ -133,7 +138,7 @@ const agregarCarrito = (id) => {
 
     
     //si tenemos carrito
-    cargarProductos(carrito, tablaCarrito, true)
+    cargarProductos(carrito, tablaCarrito, true);
     
 }
 
