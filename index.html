@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--Link to CSS Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
     <!--Link to CSS style-->
-    <link rel="stylesheet" href="./primera-preentrega/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <!--Title de nuestra tienda online-->
     <title>Vinoteca BBB - Tienda de Vinos, espumantes y bebidas espirituosas</title>
@@ -15,13 +18,48 @@
 <body>
     <header>
         <!--Navigation-->
-        <ul>
-            <li>Inicio</li>
-            <li>Productos</li>
-            <li>Nosotros</li>
-            <li>Mi Carrito de compras</li>
-        </ul>
-        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            <!--Nav Logo-->
+            <a class="navbar-brand" href="#">VINOS BBB</a>
+            
+            <!--Nav Toggler-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Inicio<span class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nosotros</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Carrito</a>
+                </li>
+
+              </ul>
+
+              <!--Buscador-->
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+
     </header>
 
 <main>
@@ -30,34 +68,87 @@
         <p>breve intro y bienvenida</p>
 
     <!--Nuestros Vinos-->
-    <h2>Vinos Tintos</h2>
-        <p>Tenemos una gran variedad de vinos tintos....</p>
-            <ul>
-                <li>Malbec</li>
-                <li>Cabernet Sauvignon</li>
-                <li>Syrah/li>
-                <li>Merlot</li>
-            </ul>
+    <div class="container">
+        <div id="productos" class="d-flex row flex-wrap m-3">
 
-    <h2>Vinos Blanco</h2>
-        <p>Tenemos una gran variedad de vinos blancos....</p>
-            <ul>
-                <li>Torrontes</li>
-                <li>Chardonnay</li>
-                <li>Blend</li>
-                <li>Semillon</li>
-            </ul>
+                <h2>Vinos Tintos</h2>
+                    <p>Tenemos una gran variedad de vinos tintos....</p>
+                        <ul>
+                            <li>Malbec</li>
+                            <li>Cabernet Sauvignon</li>
+                            <li>Syrah/li>
+                            <li>Merlot</li>
+                        </ul>
 
-    <h2>Espumantes</h2>
+                <h2>Vinos Blanco</h2>
+                    <p>Tenemos una gran variedad de vinos blancos....</p>
+                        <ul>
+                            <li>Torrontes</li>
+                            <li>Chardonnay</li>
+                            <li>Blend</li>
+                            <li>Semillon</li>
+                        </ul>
 
-    <h2>Espirituosas</h2>
 
-    <!--Promociones-->
-    <h3>Promociones</h3>
+                <h2>Espumantes</h2>
+                    <!--
+                        <ul>
+                        <li class="espumantes">Familia Gascón Extra Brut</li>
+                        <li class="espumantes">Nieto Senetiner Brut Nature</li>
+                        <li class="espumantes">Las Perdices Champenoise Extra Brut Rosé</li>
+                        <li class="espumantes">Luigi Bosca Brut Nature</li>
+                    </ul>
+                    -->
+         <!--Modal Carrito-->
+         <!-- Button trigger modal -->
+         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Carrito
+        </button>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Imagen</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tablaCarrito">
+                     
+                    </tbody>
+                  </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <h2>Espirituosas</h2>
+
+                <!--Promociones-->
+                <h3>Promociones</h3>
+        </div>
+    </div>
 
     <!--Section de FAQ / Preguntas frecuentes-->
-    <h4>Preguntas frecuentes</h4>
-    
+    <div id="FAQs">
+        <h4 id ="preguntas">Preguntas frecuentes</h4>
+            <p class="p-bold">Como podemos guardar el vino?</p>
+            <p>Los vinos suelen tener....</p>
+    </div>
   
 </main>
 
@@ -66,8 +157,11 @@
 
 </footer>
 
+<!--Link a nuestros Bootstrap JS-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <!--Link a nuestros JavaScripts-->
-<script src="./index.js"></script>  
+<script src="dom-interact.js"></script>  
 </body>
 </html>
