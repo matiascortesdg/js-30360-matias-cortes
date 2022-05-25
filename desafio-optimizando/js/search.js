@@ -1,4 +1,4 @@
-
+/*
 
 //Probando unas Cards 
 
@@ -9,6 +9,8 @@ const tablaCarrito = document.getElementById("tablaCarrito");
 
 //Local Storage ó array vacio
 const carrito = localStorage.getItem("carrito") || [];
+
+*/
 
 const Productos = [
 
@@ -156,19 +158,65 @@ stock:0,
 ];
 
 
-//Search PRODUCTS OPERADOR &&
-/*
-function searchProductos() {
+//OPERADORES
 
-    Productos.item.id === "" && console.log("Los productos estan vacios");
+Productos.length === 0 && console.log("productos está vacio");
 
-}*/
+const tintos = (Productos.id <= 4 && Productos.tipo === "Vino Tinto") ? true : false;
+console.log(tintos);
+
+const blancos = (Productos.id >= 5 && Productos.id <= 8 || Productos.tipo === "Vino Blanco") ? true : false;
+console.log(blancos);
+
+
+//DESESTRUCTURACION DEL PARAMETRO DE UNA FUNCION
+
+function getUser({id, nombre, tipo, variedad, bodega, precio}) {
+    console.log(id);
+    console.log(nombre);
+    console.log(tipo);
+	console.log(variedad);
+    console.log(bodega);
+    console.log(precio);
+
+	}
+
+let VinoTinto = {
+    id: 01,
+    nombre: "La Celia",
+	tipo: "Vino Tinto",
+    variedad: "Malbec",
+    bodega: "La Celia",
+    precio: 650
+};
+
+getUser(VinoTinto);
+
+
+//DESESTRUCTURACION DE OBJETOS DENTRO ARRAYS
+
+const [prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10, prod11, prod12] = Productos;
+    console.log(prod1);
+    console.log(prod2);
+    console.log(prod3);
+    console.log(prod4);
+
+    //SPREAD OPERATOR CLONANDO UN PRODUCTO DEL ARRAY
+
+    let prod13 = [{...prod1,
+        id: 13,
+        nombre: "Elementos",
+        tipo: "Vino Tinto",
+        variedad: "Malbec",
+        bodega: "El Esteco",
+        precio: 550,
+        top100: 30
+    }]
+    
+    console.log(prod13);
 
 
 
-//SEARCH PRODUCTOS OPERADOR ||
 
-let resultado1 = Productos.find (item => item.id === 01 );
 
-console.log(resultado1); // {}
 
