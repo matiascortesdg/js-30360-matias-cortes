@@ -75,3 +75,22 @@ body header {
             background-color: green;
         };
         
+
+/* imagenes */
+
+.card {
+  width: 10%;
+}
+
+
+    /* Tipografias */
+      .card-title {
+        font-family: "Roboto";
+        font-size: 1rem;
+        font-weight: bold;
+      };
+
+      .card-text {
+        font-family: "Roboto";
+        font-size: 1rem;
+      };
