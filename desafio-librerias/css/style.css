@@ -1,0 +1,135 @@
+/* GRAL CSS RESET */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+body header {
+    background-color: white;
+    /* NAVIGATION */
+  }
+  body header .navbar-light {
+    outline: none;
+    color: orange;
+    background-color: orange;
+    /* Mobile - toggler */
+  }
+  body header .navbar-light .collapse .navbar-nav .nav-item .active {
+    color: orange;
+    text-shadow: 0 1.5em 50px;
+  }
+  body header .navbar-light .collapse .navbar-nav .nav-item .active:hover {
+    color: orange;
+    text-shadow: 0 1.5em 50px;
+  }
+  body header .navbar-light .collapse .navbar-nav .nav-item .nav-link {
+    padding: 0 20px;
+    transition: 0.3 ease;
+  }
+  body header .navbar-light .collapse .navbar-nav .nav-item .nav-link:hover {
+    color: orange;
+    text-shadow: 0 1.5em 50px;
+  }
+  body header .navbar-light .navbar-toggler {
+    outline: none;
+  }
+  body header .navbar-light .navbar-toggler:hover {
+    border: none;
+    outline: none;
+    background-color: orange;
+  }
+  @media only screen and (max-width: 991px) {
+    body header .navbar-light #navbarNav {
+      margin: 1em;
+      justify-content: flex-end;
+      align-items: flex-end;
+      width: 10%;
+    }
+  }
+  body header .navbar {
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-weight: 600;
+    color: orange;
+  }
+
+
+/* BOTONES CSS */
+
+    #btnBienvenida {
+        color: white;
+        background-color: brown;
+    };
+
+        #btnBienvenida:hover {
+            background-color: green;
+
+        };
+
+    .btn {
+
+            color:white;
+            background-color: green;
+        };
+        
+
+/* imagenes */
+
+.card >.card-img-top {
+  width: 10%;
+}
+
+
+    /* Tipografias */
+      .card-title {
+        font-family: "Roboto";
+        font-size: 1rem;
+        font-weight: bold;
+      };
+
+      .card-text {
+        font-family: "Roboto";
+        font-size: 1rem;
+      };
+
+
+
+      main hr {
+        width: 80px;
+        height: 20px;
+        background-color: orange;
+      }
+      main .hr-2 {
+        width: 80px;
+        height: 1px;
+        background-color: green;
+      }
+      main .container {
+        margin: 0 auto;
+        text-align: center;
+      }
+
+
+      @media (min-width: 768px) {
+        .form-inline .form-control {
+            width: 60%;
+        }
+    }
+      
+/* form-inline */
+.form-inline {
+  display: inline;
+}
+
+    .modal-body .table {
+      font-family: "Roboto";
+      font-size: 1rem;
+
+    }
+
+    .popup-class {
+      background-color: lightcyan;
+    }
