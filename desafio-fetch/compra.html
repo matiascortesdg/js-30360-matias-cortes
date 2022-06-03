@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+  
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+     <!--Link to CSS Bootstrap-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!--Link Toastify-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+    <!--Link SweetAlert-->
+    <link rel="stylesheet" href="https://@sweetalert2/themes/dark/dark.css">
+
+    <!--Link to CSS style-->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <!--Title de nuestra tienda online-->
+    <title>Vinoteca BBB - Tienda de Vinos, espumantes y bebidas espirituosas</title>
+  </head>
+
+  <body>
+    
+    <!--Header-->
+    <div class="fixed-top">
+      <div id="pre-header">
+        <p>Compras por $5000 tenes 25% de descuento en tu compra total</p>
+      </div>
+
+      <!--Logo-->
+      <div class="header">
+        <a href="./index.html">
+            <img src="img/bbb-logo-01.svg" alt="">
+        </a>
+      </div>
+
+    </div>
+    
+    <div class="container compra">
+        <div class="divProductosCompra">
+            <p>Resumen de tu pedido:</p>
+            <ul class="collection">
+                
+
+            </ul>
+        </div>
+        <div class="divPago">
+            <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    
+                    <div class="input-field col s6">
+                      <input placeholder="Juan" id="nombre" type="text" class="validate" required>
+                      <label for="nombre">Nombre</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                      <input placeholder="Perez" id="apellido" type="text" class="validate" required>
+                      <label for="apellido">Apellido</label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input value="39568745" id="documento" type="number" class="validate" required>
+                      <label for="documento">Documento</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" class="validate" required>
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    
+                    <!--Medio de pago x Tarjeta-->
+                    <div class="col s12">Método de pago:
+                      <!--Tarjeta Numero-->
+                      <div class="col s12">
+                        <input placeholder="4517-5689-8965-2136" value="" id="numTarjeta" type="number" class="validate" required>
+                        <label for="numTarjeta">Número de la tarjeta</label>
+                      </div>
+                      <!--Tarjeta Nombre Titular-->
+                      <div class="col s12">
+                        <input placeholder="Juan E Perez" value="" id="nomTarjeta" type="text" class="validate" required>
+                        <label for="nomTarjeta">Nombre (como figura en la tarjeta)</label>
+                      </div>
+                      <!--Tarjeta Codigo de Seguridad-->
+                      <div class="col s6">
+                        <input placeholder="053" value="" id="codTarjeta" type="number" class="validate" required>
+                        <label for="codTarjeta">Código de seguridad</label>
+                      </div>
+                      <!--Tarjeta Vencimiento-->
+                      <div class="col s6">
+                        <input placeholder="0526" value="" id="venTarjeta" type="number" class="validate" required>
+                        <label for="venTarjeta">Vencimiento(mmaa)</label>
+                      </div>
+                    </div>
+                  </div>
+				
+                  
+                
+                  <div class="input-field col s12">
+                    <select class="browser-default"></select>
+                  
+                
+                    <a href="./pagoConfirmado.html">
+                      <button class="btn waves-effect waves-light btnEnviar" type="button" name="action">Confirmar
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </a>
+                
+                  </div>
+              
+        			
+			</form>
+
+    </div>
+		</div>
+	  </div>
+    
+    <!--Link to LUXON-->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
+
+    <!--Link to TOASTIFY JS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!--Pegar la libreria de SweetALert del CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--Link a nuestros Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <!-- <script src="/src/stock.js" type="module"></script> -->
+    <script src="./js/pago.js" type="module"></script>
+
+    
+  </body>
+</html>
