@@ -15,9 +15,9 @@ class Producto {
   constructor(id, nombre, tipo, variedad, bodega, precio, image, stock, cantidad) {
     this.id = id,
     this.nombre = nombre,
-    this.nombre = tipo,
-    this.nombre = variedad,
-    this.nombre = bodega,
+    this.tipo = tipo,
+    this.variedad = variedad,
+    this.bodega = bodega,
     this.precio = precio,
     this.image = image,
     this.stock = stock,
@@ -39,11 +39,11 @@ export const agregarAlCarrito = (productoId) => {
 
   //TOASTIFY
   Toastify({
-    text: "Has agregado un nuevo producto al carrito de compras",
+    text: "Agregaste un nuevo producto al carrito de compras",
     backgroundColor: '#000000',
     offset: {
-      x: 70, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-      y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+      x: '2em', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+      y: '2em' // vertical axis - can be a number or a string indicating unity. eg: '2em'
     },
   }).showToast();
   validacionCarrito();
@@ -180,7 +180,7 @@ function calculadorCarrito (carritoDePedido) {
   let precioTotal = document.getElementById("precio-total");
   //Toma los elementos del array y de ellos calcula precio por la cantidad, no lo acumula y lo devuelve
   let precioSubtotal = carritoDePedido.reduce((acc, el) => acc + (el.precio * el.cantidad), 0);
-  if (precioSubtotal > 6000) {
+  if (precioSubtotal > 5000) {
     precioSubtotal = precioSubtotal - (precioSubtotal * 0.25);
     precioTotal.innerText = `Felicitaciones! Tu compra supera los $5000, tenes el 25% off.`
     precioTotal.innerHTML += `<p>El precio total es de $ ${precioSubtotal}</p>`

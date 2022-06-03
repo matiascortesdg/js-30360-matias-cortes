@@ -29,7 +29,7 @@ function calcularCuotas (carrito) {
     let divProductosCompra = document.querySelector(".divProductosCompra");
     //Toma los elementos del array y de ellos calcula precio por la cantidad, no lo acumula y lo devuelve
     let precioSubtotalCompra = carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0);
-    if (precioSubtotalCompra > 6000) {
+    if (precioSubtotalCompra > 5000) {
       precioSubtotalCompra = precioSubtotalCompra - (precioSubtotalCompra * 0.25);
       divProductosCompra.innerHTML += `<p>Felicitaciones! Tu compra supera los $5000, tenes el 25% off. <br> El precio total es de $ ${precioSubtotalCompra}</p>`
     } else {
@@ -38,8 +38,7 @@ function calcularCuotas (carrito) {
     let input = document.querySelector('.input-field');
     let select = document.querySelector('.browser-default');
     select.innerHTML = `<option value="" disabled selected>Elegí tus cuotas</option>
-    <option value="1">3 cuotas de $${(precioSubtotalCompra / 3)} sin interés</option>
-    <option value="2">6 cuotas de $${(precioSubtotalCompra / 6)} sin interés</option>
-    <option value="3">12 cuotas de $${(precioSubtotalCompra / 12)} sin interés</option>`;
-
-  }
+                        <option value="1">3 cuotas de $${(precioSubtotalCompra / 3)} sin interés</option>
+                        <option value="2">6 cuotas de $${(precioSubtotalCompra / 6)} sin interés</option>
+                        <option value="3">12 cuotas de $${(precioSubtotalCompra / 12)} sin interés</option>
+                        `;}
