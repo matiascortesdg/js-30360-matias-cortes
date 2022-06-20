@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    
+ 
+    
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+
+    <!--Link to My CSS-->
+    <link rel="stylesheet" href="./css/style.css"/>
+    
+  <title>VINOTECA BBB | Bienvenidos a vinos Bueno, Bonito y Barato<</title>
+
+  </head>
+
+  <body>
+   
+    <!--Header-->
+    <header>
+      <div class="top-header fixed-top">
+  
+        <!--Banner PROMOCIONES-->
+        <div id="promo-banner">
+          <p>TENÉS 25% de descuento cuando alcances $5000 del total en productos</p>
+        </div>
+  
+        <!--Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  
+          <div class="container-fluid">
+            <!--Logo-->
+            <a class="navbar-brand" href="index.html">
+              <img id="header-logo" src="./img/bbb-logo-01.svg" alt="logo bonsai tree">VINOTECA BBB</a>
+  
+            <!--NavBar Toggler-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <!--NavBar-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                      
+              <ul class="navbar-nav ml-auto">
+  
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link" href="./contacto.html">Contacto</a>
+                </li>
+  
+                <!--CARRITO DE COMPRAS-->
+                <li class="nav-item">
+                  <button id="cesta-carrito" class="nav-link">
+                    <i class="small material-icons">local_grocery_store</i>
+                  </button>
+                </li>  
+                      
+              </ul>
+            </div>
+          </div>
+      
+        </nav>
+        <!--Fin de Navigation-->
+      
+      </div>
+      <!--Fin de banner-->
+      
+      </header>
+      <!--Fin de Header--> 
+
+    <div class="container compra">
+        <div class="divProductosCompra">
+            <p>Resumen de tu pedido:</p>
+            <ul class="collection">
+            </ul>
+        </div>
+
+        <div class="divPago">
+            <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    
+                    <div class="input-field col s6 mt-5">
+                      <input placeholder="Juan" id="nombre" type="text" class="validate" required>
+                      <label for="nombre">Nombre</label>
+                    </div>
+
+                    <div class="input-field col s6 mt-5">
+                      <input placeholder="Gonzalez" id="apellido" type="text" class="validate" required>
+                      <label for="apellido">Apellido</label>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="25450678" id="documento" type="number" class="validate" required>
+                      <label for="documento">Documento</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" class="validate" required>
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    
+                    <!--Medio de pago x Tarjeta-->
+                    <div class="col s12">Método de pago:
+                      <!--Tarjeta Numero-->
+                      <div class="col s12">
+                        <input placeholder="6789-3245-6534-7698" value="" id="numTarjeta" type="number" class="validate" required>
+                        <label for="numTarjeta">Número de la tarjeta</label>
+                      </div>
+                      <!--Tarjeta Nombre Titular-->
+                      <div class="col s12">
+                        <input placeholder="JUAN GONZALEZ" value="" id="nomTarjeta" type="text" class="validate" required>
+                        <label for="nomTarjeta">Nombre (como figura en la tarjeta)</label>
+                      </div>
+                      <!--Tarjeta Codigo de Seguridad-->
+                      <div class="col s6">
+                        <input placeholder="456" value="" id="codTarjeta" type="number" class="validate" required>
+                        <label for="codTarjeta">Código de seguridad</label>
+                      </div>
+                      <!--Tarjeta Vencimiento-->
+                      <div class="col s6">
+                        <input placeholder="0723" value="" id="venTarjeta" type="number" class="validate" required>
+                        <label for="venTarjeta">Vencimiento(mmaa)</label>
+                      </div>
+                    </div>
+                  </div>
+				
+                  
+                
+                  <div class="input-field col s12">
+                    <select class="browser-default"></select>
+                  
+                                
+                    <a href="./index.html">
+                      <button class="btn waves-effect waves-light btnVolver" type="button" name="action">Volver</button>
+                    </a>
+
+                    <a href="./pagoConfirmado.html">
+                      <button class="btn waves-effect waves-light btnEnviar" type="button" name="action">Confirmar
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </a>
+                
+                  </div>
+              
+        			
+			</form>
+
+    </div>
+		</div>
+	  </div>
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- <script src="/src/stock.js" type="module"></script> -->
+    <script src="./js/pago.js" type="module"></script>
+
+    
+  </body>
+</html>

@@ -1,0 +1,271 @@
+/* TIPOGRAFIAS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+
+/* GRAL CSS RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/* HEADER */
+
+.header-logo{
+  max-width: 5px;
+  display: inline;
+  justify-content: space-between;
+  align-items: left;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+#pre-header {
+  font-family: "Roboto";
+  background-color:lightseagreen ;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 5px;
+  align-content: center;
+
+
+}
+
+  p {
+    font-family: "Roboto";
+    margin: 0;
+  }
+  
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card .card-title {
+  font-family: "Roboto";
+  font-size: 20px;
+}
+
+.card-text {
+  font-family: "Roboto";
+  font-weight: bold;
+  padding-bottom: 1.5em;
+}
+
+
+
+
+
+#precio-total {
+  font-family: "Roboto";
+  padding-bottom: 10px;
+  font-weight: 200;
+
+  font-size: 16px;
+  padding-left: 14px;
+  text-align: center;
+  }
+
+ #precio-total p {
+   padding-top: 5px;
+   font-size: 20px;
+   font-weight: 400;
+ } 
+
+ /* ICONOS */
+
+#cesta-carrito {
+  border-radius: 50%;
+  background-color: cyan;
+  border: 0;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+}
+
+/* HEADER */
+
+nav {
+  background-color:red;
+}
+
+.modal-active {
+  opacity: 1;
+  visibility: visible;
+  background-color:lightgray;
+  z-index: 5;
+  display: block;
+}
+
+#ordenar {
+  margin: 0 auto;
+
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-height: 100%;
+}
+
+.container {
+  margin-top: 300px;
+
+}
+
+.compra {
+  background-color: white;
+  padding: 80px;
+  margin-top: 100px;
+  display: flex;
+
+  
+}
+
+.pagoConfirmado {
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  margin-top: 200px !important;
+}
+
+.mensajePago {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mensajePago #text_01 {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.mensajePago #text_00 {
+  font-size: 30px;
+  color: #F8AC39;
+}
+
+
+.mensajePago #text_02 {
+  font-weight: 200;
+}
+
+.material-icons {
+  color:black; 
+  
+}
+
+.divPago {
+  width: 45%;
+}
+
+
+
+.divProductosCarrito img {
+  width: 50px;
+
+}
+
+.divBut button {
+  background-color: #ffffff;
+  border: 0;
+  
+
+}
+
+.divBut button i {
+  color: #dc3545;  
+
+}
+
+.contenedorCarrito {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: #aaa6a6 solid 1px;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.botones-modal {
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer {
+  background-color: brown;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#redes {
+  max-width: 300px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+}
+
+.btnEnviar {
+  margin-top: 10px;
+}
+
+
+
+
+#redes img {
+  width: 30px;
+  margin: 5px;
+}
+
+#vaciar-carrito {
+  display: flex;
+  align-items: center;
+}
+
+#comprar-carrito {
+  display: flex;
+  align-items: center;
+  border: #000000;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none !important;
+}
+
+.divProductosCompra {
+  width: 50%;
+}
+
+.divProductosCompra p {
+  font-weight: 200;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .divPago {
+    width: 100%;
+  }
+
+  .divProductosCompra {
+    width: 100%;
+  }
+}
+
+
+/* SWEETALERT  */
+
+.swal2-styled.swal2-confirm {
+  background-color:green;
+}
